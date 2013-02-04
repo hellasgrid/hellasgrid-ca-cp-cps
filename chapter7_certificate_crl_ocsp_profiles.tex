@@ -1,0 +1,129 @@
+
+\chapter{CERTIFICATE, CRL, AND OCSP PROFILES}
+\section{Certificate profile}
+\subsection{Version number(s)}
+
+All certificates that reference this Policy will be issued in the X.509 version 3 format and will include a reference to the O.I.D. of this Policy within the appropriate field. 
+
+\subsection{Certificate extensions}
+
+\begin{itemize}
+\item{User and Robot certificates:}
+\begin{enumerate}
+\item{Basic constraints (Critical): Not a CA.}
+\item{Key usage (Critical): Digital signature, key encipherment, data encipherment.}
+\item{Extended Key Usage (Not Critical): clientAuth}
+\item{Subject key identifier}
+\item{Authority key identifier}
+\item{Subject alternative name(s)}
+\item{Issuer alternative name}
+\item{CRL distribution points (pointing to one http URL)}
+\item{Certificate policies}
+\end{enumerate}
+
+\item{Host and Service certificates:}
+\begin{enumerate}
+\item{Basic constraints (Critical): Not a CA.}
+\item{Key usage (Critical): Digital signature, key encipherment, data encipherment.}
+\item{Extended Key Usage (Not Critical): clientAuth, serverAuth}
+\item{Subject key identifier}
+\item{Authority key identifier}
+\item{Subject alternative name(s)}
+\item{Issuer alternative name}
+\item{CRL distribution points (pointing to one http URL)}
+\item{Certificate policies}
+\end{enumerate}
+
+\item{CA certificate:}
+\begin{enumerate}
+\item{Basic constraints (Critical): CA.}
+\item{Key usage (Critical): CRL signature, key certificate signature}
+\item{Subject key identifier}
+\item{Authority key identifier}
+\item{Subject alternative name}
+\item{Issuer alternative name}
+\item{CRL distribution points (pointing to one http URL)}
+\item{Certificate policies}
+\end{enumerate}
+\end{itemize}
+
+\subsection{Algorithm object identifiers}
+
+\begin{enumerate}
+\item{Hash Function: id-sha1 1.3.14.3.2.26}
+\item{RSA Encryption: rsaEncryption 1.2.840.113549.1.1.1}
+\item{Signature Algorithm: sha1WithRSAEncryption 1.2.840.113549.1.1.5}
+\end{enumerate}
+
+\subsection{Name forms}
+
+Issuer:
+
+\begin{verbatim}
+C=GR,
+O=HellasGrid,
+OU=Certification Authorities,
+CN=HellasGrid CA 2006
+\end{verbatim}
+
+Subject:
+
+\begin{verbatim}
+C=GR,
+O=HellasGrid,
+OU=UNIT,
+CN=SUBJECT NAME
+\end{verbatim}
+
+\subsection{Name constraints}
+
+Subject attribute constraints:
+
+countryName:
+Must be GR.
+
+OrganizationName:
+Must be HellasGrid.
+
+organizationalUnitName:
+Must be the DNS domain name of the Institution/Organization the subject belongs to.
+
+commonName:
+See \ref{sub:TypesOfNames} and \ref{sub:UniquenessOfNames}.
+
+
+\subsection{Certificate policy object identifier}
+
+HellasGrid CA identifies this policy with the object identifier (OID) specified in section \ref{sec:DocumentNameAndIdentification}.  All the certificates issued under this policy will also include the O.I.D. of the "Authentication Profile for Classic X.509 Public Key Certification Authorities with secured infrastructure" (1.2.840.113612.5.2.2.1).
+
+\subsection{Usage of Policy Constraints extension}
+
+No stipulation.
+
+\subsection{Policy qualifiers syntax and semantics}
+
+No stipulation.
+
+\subsection{Processing semantics for the critical Certificate Policies extension}
+
+No stipulation.
+
+\section{CRL profile}
+\subsection{Version number(s)}
+
+All CRLs will be issued in the X.509 version 2 format.
+
+\subsection{CRL and CRL entry extensions}
+
+CRLs have only the Authority key Identifier extension.
+
+\section{OCSP profile}
+
+\subsection{Version number(s)}
+
+Currently HellasGrid CA does not operate a production level OCSP service.
+
+\subsection{OCSP extensions}
+
+Currently HellasGrid CA does not operate a production level OCSP service.
+

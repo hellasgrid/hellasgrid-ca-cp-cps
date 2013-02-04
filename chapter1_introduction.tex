@@ -1,0 +1,238 @@
+
+\chapter{INTRODUCTION}
+\section{Overview}
+
+This document describes the Certification Policy and the Certificate Practice statement of the HellasGrid Certification Authority, following the structure set out in RFC 3647. 
+
+HellasGrid CA is managed and operated by GRNET S.A. in cooperation with the Scientific Computing Center at A.U.Th.
+
+\section{Document name and identification}
+\label{sec:DocumentNameAndIdentification}
+
+\begin{itemize}
+\item{Document title: HellasGrid CA Certification Policy and Certification Practice Statement}
+\item{Version: $2.1$}
+\item{Document Date: 7 Feb, 2012}
+\item{O.I.D.: 1.3.6.1.4.1.16515.20.1.1.2.1}
+\end{itemize}
+The following tabular describes the structure of the O.I.D.
+
+\begin{table}[hbt]
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+1.3.6.1.4.1 & Prefix for IANA private enterprises \\
+\hline
+16515 & GRNET S.A. \\
+\hline
+20 & HellasGrid \\
+\hline
+1 & HellasGrid CA \\
+\hline
+1 & CP/CPS \\
+\hline
+2.1 & Document Version \\
+\hline
+\end{tabular}
+\end{center}
+\caption{O.I.D. description table}
+\end{table}
+
+\section{PKI participants}
+
+\subsection{Certification Authorities}
+
+HellasGrid CA is a subordinate CA under the HellasGrid Root CA and signs only End Entity Certificates.
+
+The following simple sketch clarifies the relationship among the HellasGrid Root CA and the HellasGrid CA.
+ 
+The HellasGrid Root CA signs the HellasGrid CA (subordinate) certificate, which in turn signs certificates for end entities affiliated with Greek academic and research institutions. 
+
+\begin{picture}(24,40)
+\put(50,0){\oval(100,40)}
+\put(200,0){\oval(100,40)}
+\put(350,0){\oval(100,40)}
+\put(105,0){\vector(1,0){40}}
+\put(255,0){\vector(1,0){40}}
+\put(112,4){signs}
+\put(262,4){signs}
+\put(25,4){HellasGrid}
+\put(28,-10){Root CA}
+\put(175,4){HellasGrid}
+\put(163,-10){End Entities CA}
+\put(322,-4){End Entities}
+\end{picture}
+
+%\begin{figure}[h]
+%\begin{center}
+%\includegraphics[width=0.6\textwidth]{CA-Hierarchy.png}
+%\end{center}
+%\end{figure}
+
+\vspace{0.5cm}
+
+\subsection{Registration Authorities}
+
+The procedure of identification and authentication of the certificate applicants is performed by trusted parties (Registration Authorities), appointed by the HellasGrid CA. Communication between the RA and the CA may take place via signed e-mails or via the SSL protected CA web portal. At any time the list of valid Registration Authorities is available on the on-line repository operated by the HellasGrid CA.
+
+See also section \ref{sec:PublicationOfCertificationInformation}.
+
+\subsection{Subscribers}
+\label{sub:Subscribers}
+
+Subscribers eligible for certification by the HellasGrid CA are:
+
+\begin{enumerate}
+\item{All Greek nationals or entities formally based and/or having offices in Greece, that are involved in research and/or education;}
+\item{Digital processing entities, capable for performing cryptographic operations, located in Greece or used by Greek organizations focused in research and/or education;}
+\end{enumerate}
+
+
+\subsection{Relying parties}
+
+
+People and Organizations that are using the public keys found in certificates issued by the HellasGrid CA, for the purposes of signature verification and/or encryption, will be considered as relying parties.
+
+\subsection{Other participants}
+
+No stipulation. 
+
+\section{Certificate Usage}
+
+The ownership of a HellasGrid CA certificate does not imply automatic access to any kind of resources.
+
+\subsection{Appropriate certificate uses}
+
+Certificates issued by the HellasGrid CA are only valid in the context of research and educational activities.
+
+\subsection{Prohibited certificate uses}
+
+Any other kind of usage, such as financial transactions, is strictly forbidden.
+
+\section{Policy administration}
+\subsection{Organization administering the document}
+\label{sub:OrganizationAdministeringTheDocument}
+
+The HellasGrid CP/CPS was authored and is administered by GRNET S.A. in cooperation with the Scientific Computing Center at A.U.Th.
+
+The HellasGrid CA address for operational issues is :
+
+\begin{verbatim}
+HellasGrid Certification Authority
+GRNET S.A.
+56, Mesogion Av.
+11527 Athens,
+GREECE
+Phone: +302107474274
+Fax: +302107474490
+Email: ca@hellasgrid.gr
+\end{verbatim}
+
+\subsection{Contact Person}
+\label{sub:ContactPerson}
+
+The contact persons for questions about this document or any other HellasGrid CA related issues are:
+
+\begin{verbatim}
+Kanellopoulos Christos
+Building 22b, Basement
+Aristotle University of Thessaloniki
+University Campus
+54124 Thessaloniki
+GREECE
+Phone: +302310998988
+Fax: +302310994309
+E-mail 1: c.kanellopoulos@grid.auth.gr
+E-mail 2: ca@hellasgrid.gr
+\end{verbatim}
+
+\begin{verbatim}
+Kostas Koumantaros
+GRNET S.A.
+56, Mesogion Av.
+11527 Athens,
+GREECE
+Phone: +302107474274
+Fax: +302107474490
+E-mail 1: kkoum@grnet.gr
+\end{verbatim}
+
+\subsection{Person determining CPS suitability for the policy}
+
+The persons who determine the CPS suitability for this policy is:
+
+\begin{verbatim}
+Kanellopoulos Christos
+Building 22b, Basement
+Aristotle University of Thessaloniki
+University Campus
+54124 Thessaloniki
+GREECE
+Phone: +302310998988
+Fax: +302310994309
+E-mail: c.kanellopoulos@grid.auth.gr
+\end{verbatim}
+
+\begin{verbatim}
+Kostas Koumantaros
+GRNET S.A.
+56, Mesogion Av.
+11527 Athens,
+GREECE
+Phone: +302107474274
+Fax: +302107474490
+E-mail 1: kkoum@grnet.gr
+\end{verbatim}
+
+
+\subsection{CPS approval procedures}
+\label{sub:CPSApprovalProcedures}
+
+New versions of the Certification Practice Statement are reviewed internally in order to verify their suitability against the IGTF minimum requirements for "classic X.509 CAs with secure infrastructures".  After a successful internal review the CPS (with an updated version number and O.I.D.) is submitted to the EUGridPMA in order to go through the EUGridPMA accreditation procedure.
+
+\newpage
+
+\section{DEFINITIONS AND ACRONYMS}
+
+
+\begin{tabular}{|p{0.35\textwidth}|p{0.6\textwidth}|}
+
+\hline
+Authentication & 
+The process of establishing that individuals or organizations are who they claim to be. This process corresponds to the second process involved in identification. \\
+%\hline
+%\end{tabular}
+%\begin{tabular}{|p{0.45\textwidth}|p{0.45\textwidth}|}
+%\hspace{-0.7cm} % Gia kapoio logo den ekane edw swsta align
+%\begin{tabular}{|p{0.35\textwidth}|p{0.6\textwidth}|}
+\hline
+Certificate Policy (CP) &
+A named set of rules that indicates the applicability of a certificate to a particular community and/or class of application with common security requirements. For example, a particular certificate policy might indicate applicability of a type of certificate to the authentication of electronic data interchange transactions. \\
+\hline
+Certificate Revocation List (CRL) &
+A time stamped list identifying revoked certificates which is signed by a CA and made freely available in a public repository. \\
+\hline
+Certification Authority (CA) &
+An authority trusted by one or more subscribers to create and assign public key certificates and to be responsible for them during their whole lifetime. \\
+\hline
+Certification Practices Statement (CPS) &
+A statement of the practices, which a certification authority employs in issuing certificates. \\
+\hline
+End Entity (EE) & 
+Subscribers (users, hosts and services) of the HellasGrid CA \\
+\hline
+Identification & 
+The process of establishing the identity of an individual or organization. It involves two subprocesses in the context of PKI. (1) Establishing that a given name corresponds to a real-world identity and (2) establishing that an individual or organization under that name is in fact the named individual or organization. \\
+%\newpage
+\hline
+Registration Authority (RA) & 
+An individual or group of people appointed by an organization that is responsible for Identification and Authentication of certificate subscribers, but that does not sign or issue certificates (i.e., an RA is delegated certain tasks on behalf of a CA).\\
+\hline
+Relying Party (RP) & 
+A recipient of a certificate who acts in reliance to that certificate and/or to digital signatures verified using that certificate. \\
+\hline
+Robots &
+Robots, also known as automated clients, are entities that perform automated tasks without human intervention. Production ICT environments typically support repetitive, ongoing processes - either internal system processes or processes relating to the applications being run (e.g. by a site or by a portal system). These procedures and repetitive processes are typically automated, and generally run using an identity with the necessary privileges to perform their tasks. \\
+\hline
+\end{tabular}
+

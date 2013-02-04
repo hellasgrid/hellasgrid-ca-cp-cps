@@ -1,0 +1,220 @@
+
+\chapter{FACILITY, MANAGEMENT, AND OPERATIONAL CONTROLS}
+\section{Physical controls}
+\subsection{Site location and construction}
+
+HellasGrid CA is hosted at the Scientific Computing Center at the Aristotle University of Thessaloniki. The CA signing machine is kept in a secure environment were access is controlled and limited to CA staff. 
+
+
+\subsection{Physical access}
+
+The CA signing machine is located in a secure environment where access is controlled. Physical access to the CA system and the CA web server is restricted to authorized personnel. Such personnel may enter the room where the CA system and the CA web server reside only by using their magnetic cards and by entering their PIN number on an electronic key lock. Access logs are recorded on the electronic key log. 
+
+\subsection{Power and air conditioning}
+
+The HellasGrid CA signing machine and the CA web portal are both protected by the  Uninterruptible Power Supply and the Power Generator of the Data Center. The Data Center hosting the CA services is equipped with environmental controls that ensure the proper cooling and ventilation.
+
+\subsection{Water exposures}
+
+Due to the location of the HellasGrid CA facilities, floods are not expected.
+
+\subsection{Fire prevention and protection}
+
+The Data Center where HellasGrid CA is hosted is located in a public building adhering to the Greek laws regarding fire prevention and protection in public buildings.
+
+
+\subsection{Media storage}
+\label{sub:MediaStorage}
+
+\begin{enumerate}
+\item{The HellasGrid CA private key is kept in several removable storage media;}
+\item{Backup copies of CA related information may be kept in magnetic tape cartridges, floppies and CD-ROM.}
+\end{enumerate}
+
+\subsection{Waste disposal}
+
+Waste carrying potential confidential information such as old CD-ROMs and USB sticks are physically destroyed before being trashed.
+
+\subsection{Off-site backup}
+
+No off-site backups are currently performed.
+
+\section{Procedural controls}
+\subsection{Trusted roles}
+
+All employees, contractors, and consultants of the HellasGrid CA (collectively personnel) that have access to or control over cryptographic operations that may materially affect the CA issuance, use, suspension, or revocation of certificates, including access to restricted operations of the CA repository, shall, for purposes of this Policy, be considered as serving in a trusted role. Such personnel include, but are not limited to, system administration personnel, operators, engineering personnel, and executives who are designated to oversee the CA operations.
+
+\subsection{Number of persons required per task}
+
+No stipulation.
+
+\subsection{Identification and authentication for each role}
+
+No stipulation.
+
+\subsection{Roles requiring separation of duties}
+
+No stipulation.
+
+\section{Personnel controls}
+\subsection{Qualifications, experience, and clearance requirements}
+
+HellasGrid CA personnel is selected by the Grid \& HPC  Operations Center, at the  Aristotle University of Thessaloniki.
+
+\subsection{Background check procedures}
+
+No stipulation.
+
+\subsection{Training requirements}
+
+Internal training is given to HellasGrid CA/RA operators.
+
+\subsection{Retraining frequency and requirements}
+\label{sub:RetrainingFrequencyAndRequirements}
+
+HellasGrid CA will perform operational audit of the CA/RA staff at least once per year. If the results of the operational audit are not satisfactory, retraining will be considered.
+
+\subsection{Job rotation frequency and sequence}
+
+No stipulation.
+
+\subsection{Sanctions for unauthorized actions}
+
+No stipulation.
+
+\subsection{Independent contractor requirements}
+
+No stipulation.
+
+\subsection{Documentation supplied to personnel}
+
+Documentation regarding all the operational procedures of the CA is supplied to personnel during the initial training period.
+
+\section{Audit logging procedures}
+\subsection{Types of events recorded}
+
+\begin{itemize}
+\item{System boots and shutdowns}
+\item{Interactive system logins}
+\item{requests for certificates}
+\item{identity verification procedures}
+\item{certificate issuing}
+\item{requests for revocation}
+\item{CRL issuing}
+\end{itemize}
+
+\subsection{Frequency of processing log}
+
+Audit logs will be processed at least once per month.
+
+
+\subsection{Retention period for audit log}
+
+%TODO: [Retention period for audit log] We should revisit this. If the user must do f2f every five years then this is the minimum amount of time for which we should keep the logs
+Audit logs will be retained for a minimum of 3 years.
+
+\subsection{Protection of audit log}
+
+Only authorized CA personnel is allowed to view and process audit logs. Audit logs are copied to an off line medium.
+
+\subsection{Audit log backup procedures}
+
+%TODO: [Audit log backup procedures] This is insufficient
+Audit logs are copied to an off line medium, which is stored in safe storage.
+
+\subsection{Audit collection system (internal vs. external)}
+
+The audit log accumulation system is internal to the HellasGrid CA.
+
+\subsection{Notification to event-causing subject}
+
+No stipulation.
+
+\subsection{Vulnerability assessments}
+
+No stipulation.
+
+
+
+\section{Records archival}
+\subsection{Types of records archived}
+
+The following data and files will be archived by the HellasGrid CA:
+
+\begin{enumerate}
+\item{all certificate application data, including certification and revocation;}
+\item{all certificates and all CRLs or certificate status records generated;}
+\item{the login/logout/reboot of the issuing machine.}
+\end{enumerate}
+
+\subsection{Retention period for archive}
+
+%TODO: [Retention period for archive] Should this be the same as in "Retention period for audit log"? 
+Logs will be kept for a minimum of three years.
+
+\subsection{Protection of archive}
+
+Audit logs are copied to an off-line medium, which is stored in safe storage. Online logs are protected by ACLs in the file system used by operating system.
+
+\subsection{Archive backup procedures}
+
+Audit events are copied to an off-line medium.
+
+\subsection{Requirements for time-stamping of records}
+
+No stipulation. 
+
+\subsection{Archive collection system (internal or external)}
+
+Audit events are copied to an off-line medium.
+
+\subsection{Procedures to obtain and verify archive information}
+
+No stipulation.
+
+\section{Key changeover}
+
+The private signing key if the CA is changed periodically; from that time on only the new key will be used for certificate signing purposes. The overlap of the old and new key will be at least 1 year. For this overlapping period, the older but still valid certificate along with the corresponding private key will be available in order to verify digital signatures and issue CRLs.
+
+The private keys of the EE certificates have to be changed periodically. The overlap of the old and new key will be at most 1 month.
+
+\section{Compromise and disaster recovery}
+\subsection{Incident and compromise handling procedures}
+
+If the CA private key is compromised or destroyed the CA will:
+
+\begin{enumerate}
+\item{Notify subscribers, RAs and IGTF;}
+\item{Terminate the issuance and distribution of certificates and CRLs;}
+\item{Notify relevant security contacts.}
+\end{enumerate}
+
+\subsection{Computing resources, software, and/or data are corrupted}
+
+Both private and public CA data is backed up every time they are changed.
+
+\subsection{Entity private key compromise procedures}
+
+If an entity private key is proved to be compromised, then the corresponding certificate will be revoked and the following entities will be notified:
+
+\begin{enumerate}
+\item{The subscriber to whom the certificate has been issued to;}
+\item{The RA who is serving the organization of the subject;}
+\item{All relevant security contacts.}
+\end{enumerate}
+
+\subsection{Business continuity capabilities after a disaster}
+
+No stipulation.
+
+\section{CA or RA termination}
+
+Upon termination the HellasGrid CA will:
+
+\begin{enumerate}
+\item{Notify subscribers, RAs and IGTF;}
+\item{Terminate the issuance and distribution of certificates and CRLs;}
+\item{Notify relevant security contacts;}
+\item{Communicate as widely as possible the end of the service.}
+\end{enumerate}
+

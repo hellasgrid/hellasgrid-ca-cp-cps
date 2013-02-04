@@ -1,0 +1,65 @@
+\documentclass[11pt,a4paper,titlepage,twoside]{book}
+
+%%% Set border's layout
+\usepackage[inner=2.8cm,vmargin=4cm,hcentering,
+            bindingoffset=5mm]{geometry}
+
+%%% Set header and footer layout
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\thechapter.\ #1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\MakeUppercase{\thesection.\ #1}}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhf{}
+\fancyhead[LE,RO]{ \thepage}
+\fancyhead[LO]{ \rightmark}
+\fancyhead[RE]{ \leftmark}
+%\fancyfoot[C]{ \thepage}
+
+%%% Use hyper-references
+\usepackage[pdftex]{color,graphicx}
+\usepackage{hyperref}
+
+\renewcommand{\maketitle}{
+\begin{titlepage}%
+ \begin{flushright}
+   {\Large
+     HellasGrid\\
+     Certification Authority\\
+   }
+ \end{flushright}
+ \rule{\textwidth}{3pt}
+ \begin{flushright}
+   \textsf{\Huge Certificate Policy and\\ 
+            Certification Practices Statement\\}
+ \end{flushright}
+ \rule{\textwidth}{3pt}
+ \vspace{\fill}
+ \end{titlepage}
+}% maketitle
+
+
+\author{}
+\title{HellasGrid Certification Authority\\ \vspace{0.5cm}
+Certificate Policy and Certification Practices Statement}
+% \date{7 Feb, 2012}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\include{chapter1_introduction}
+\include{chapter2_publication_repository_responsibilities}
+\include{chapter3_identification_authentication}
+\include{chapter4_certificate_lifecycle_operational_requirements}
+\include{chapter5_facility_management_operational_controls}
+\include{chapter6_technical_security_controls}
+\include{chapter7_certificate_crl_ocsp_profiles}
+\include{chapter8_compliance_audit_assessments}
+\include{chapter9_other_business_legal_matters}
+
+\end{document}
+

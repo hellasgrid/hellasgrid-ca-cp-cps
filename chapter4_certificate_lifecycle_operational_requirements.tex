@@ -1,0 +1,357 @@
+
+\chapter{CERTIFICATE LIFE-CYCLE OPERATIONAL REQUIREMENTS}
+\section{Certificate application}
+\subsection{Who can submit a certificate application}
+\label{sub:WhoCanSubmitACertificateApplication}
+
+Any user who has completed the enrollment process described in section \ref{sub:EnrollmentProcessAndResponsibilities}
+
+\subsection{Enrollment process and responsibilities}
+\label{sub:EnrollmentProcessAndResponsibilities}
+
+Users can enroll to the HellasGrid CA Identity Management System via the HellasGrid CA web portal. During the enrollment process the user is required to provide the following details: first name, last name, organization, e-mail address and telephone number. Upon successful verification of the user's e-mail address, the user is considered to have completed the enrollment process with the HellasGrid CA  System. It is the responsibility of the user to keep this information up to date. All users who have successfully enrolled with the HellasGrid CA, are able to submit certificate request applications.
+
+\begin{itemize}
+% TODO: There was a plus sign before item. Needs to be checked
+\item{User Certificate: The users can request to have their public keys signed via the HellasGrid CA website or via e-mail. Upon successful submission of the certificate request, the user receives an e-mail which acknowledges the receipt of the certificate request and which includes a randomly generated hash string which uniquely identifies the certificate request. The subscriber must be authenticated by the RA serving his/her organization following the procedure described in section \ref{sub:AuthenticationOfIndividualIdentity}. After successful authentication, the RA will approve the certificate request on the HellasGrid CA web portal.}
+
+\item{Server or Service Certificate: The requester must already be in the possession of a valid certificate, issued by an IGTF accredited CA, before requesting a server or service certificate. The submission of the certificate request will be performed via the HellasGrid CA web portal or via signed e-mail. The certificate request will be forwarded to the RA serving the requester's organization in order to approve or disapprove the request.}
+
+\item{Robot Certificate: The requester must already be in the possession of a valid certificate, issued by an IGTF accredited CA, before requesting a Robot certificate. The submission of the certificate request will be performed via the HellasGrid CA web portal or via signed e-mail. The certificate request will be forwarded to the RA serving the requester's organization in order to approve or disapprove the request. In the certificate request the requester must include humanly-recognizable and meaningful description of the Robot along with an electronic mail address of a persistent group of people responsible for the Robot operations.}
+\end{itemize}
+
+%either via the HellasGrid CA web portal or via e-mail.
+
+% The subject will have first to import his/her HellasGrid CA certificate in the browser in order to be authenticated automatically by the HellasGrid CA web portal. Upon successful authentication the user will be able to submit the certificate request via a web based form.
+
+%In the second case the subject will have to send an e-mail signed via his/her HellasGrid CA certificate to Hellasgrid CA [see subsection \ref{sub:OrganizationAdministeringTheDocument}]with the certificate requests attached and stating in the body of the e-mail that he is the person responsible for the server/service.
+
+% The certificate request will be forwarded to the appropriate RA, who will approve or disapprove the request according to subsections \ref{sub:PerfomingIdentificationAndAuthenticationFunctions} and \ref{sub:ApprovalOrRejectionOfCertificateApplications}.
+% 
+% Upon successful authentication of the request the RA will forward the request using the SSL protected web portal and finally the signing procedure will be performed by the CA.
+% 
+% If the subscriber wants to re-key his/her certificate, then he/she must follow the procedures described in section \ref{sec:CertificateRe-key}.
+
+\section{Certificate application processing}
+\subsection{Performing identification and authentication functions}
+\label{sub:PerfomingIdentificationAndAuthenticationFunctions}
+
+% All the certificate applications will be authenticated and validated by the HellasGrid CA and RAs. In case of a new user certificate, the request will be validated by the RA in person.
+% 
+% %In both cases the RA will have to authenticate the request. 
+% In all the other cases (re-key of user certificate while current certificate is valid, request for host or service certificate) the authentication of the certificate application will take place by checking that the requester has a valid HellasGrid CA certificate. 
+% 
+% Upon successful authentication, the certificate application will be forwarded to the RA in order to validate the information included in the certificate request. 
+% Upon successful validation the RA will forward the request using the SSL protected web portal. 
+% The signing procedure is performed by the CA. 
+
+For the first time and after that at least once every 5 years, a subscriber must be authenticated by the RA serving his/her organization following the procedure described in section \ref{sub:AuthenticationOfIndividualIdentity}. After successful authentication the RA will approve the certificate request at the HellasGrid CA web portal. If the subscriber requires to re-key his/her certificate, then he/she must follow the procedures described in section \ref{sec:CertificateRe-key}.
+
+All certificate applications will be authenticated and validated by the HellasGrid CA and RAs. In the case of a new user certificate, the request will be authenticated by checking if the hash [see section \ref{sub:EnrollmentProcessAndResponsibilities}] that the requester has supplied is correct. In all the other cases (re-key of user certificate while current certificate is valid, request for host or service certificate) the authentication of the certificate application will take place by checking that the requester has a valid HellasGrid CA certificate. Upon successful authentication, the certificate application will be forwarded to the RA in order to validate the information included in the certificate request.
+
+
+\subsection{Approval or rejection of certificate applications}
+\label{sub:ApprovalOrRejectionOfCertificateApplications}
+
+The necessary provisions that must be followed in any certificate application request to the HellasGrid CA are:
+
+\begin{enumerate}
+\item{the certificate application must be authenticated first by the RA as described in subsection \ref{sub:PerfomingIdentificationAndAuthenticationFunctions};}
+\item{the subject must be an acceptable End Entity, as defined in subsection \ref{sub:Subscribers};}
+\item{the request must follow the HellasGrid CA distinguished name scheme;}
+\item{the distinguished name must unambiguous and unique;}
+\item{the private key must be at least 1024 bits long.}
+\end{enumerate}
+
+If the certificate request does not meet one or more of the above criteria, it will be rejected and a signed notification e-mail will be sent by the HellasGrid CA to the requester.
+
+\subsection{Time to process certificate applications}
+
+Each certificate application will take no more that 2 working days to be processed from the time that the RA approves it.
+
+\section{Certificate issuance}
+\subsection{CA actions during certificate issuance}
+
+%TODO: [CA actions during certificate issuance] This needs to be re-written
+
+Right after a certificate is issued, emails are sent to the requester and to the relevant RA manager informing them about the action.
+
+\subsection{Notification to subscriber by the CA of issuance of certificate}
+\label{sub:NotificationToSubscriberByTheCAOfIssuanceOfCertificate}
+
+Right after a certificate is issued, an e-mail is sent to the requester with information on how to download his/her certificate from the HellasGrid CA web portal.
+
+After the requester successfully downloads the issued certificate, (s)he is requested to login to an SSL protected page in order to accept the issued certificate and to accept the HellasGrid CA Policy as it is described in the version of the CP/CPS that is in effect at the time.
+
+\section{Certificate acceptance}
+\subsection{Conduct constituting certificate acceptance}
+\label{sub:ConductConstitutingCertificateAcceptance}
+
+The subscriber must log in the HellasGrid CA web portal within 10 working days from the day that his/her certificate was issued and complete the certificate acceptance procedure  in which (s)he will be stating that (s)he
+
+\begin{enumerate}
+\item{(s)he has read CP/CPS that is in effect and accepts to adhere the policies and responsibilities that are described in it;}
+\item{(s)he accepts his/her certificate signed by the HellasGrid CA;}
+\end{enumerate}
+
+\subsection{Publication of the certificate by the CA}
+\label{sub:PublicationOfTheCertificateByTheCA}
+
+All the certificates issued by the HellasGrid CA will be published to an online searchable database operated by the HellasGrid CA.
+
+\subsection{Notification of certificate issuance by the CA to other entities}
+\label{sub:NotificationOfCertificateIssuanceByTheCAToOtherEntities}
+
+The RA that has handled communication with the subscriber will be notified of the certificate issuance. 
+
+\section{Key pair and certificate usage}
+\subsection{Subscriber private key and certificate usage}
+
+The subscribers' private keys along with the certificates issued by the HellasGrid CA can be used for:
+
+\begin{enumerate}
+\item{email signing and decryption (S/MIME);}
+\item{server authentication and encryption of communications;}
+\item{authentication purposes in e-Infrastructures.}
+\end{enumerate}
+
+Subscribers' private keys must not be shared.
+
+\subsection{Relying party public key and certificate usage}
+
+Relying parties can use the public keys and certificates of the subscribers for:
+
+\begin{enumerate}
+\item{email signing and decryption (S/MIME);}
+\item{server authentication and encryption of communications;}
+\item{authentication purposes in e-Infrastructures.}
+\end{enumerate}
+
+Relying parties are advised to download the CRL at least once per day and implement its restrictions when validating certificates.
+
+
+\section{Certificate renewal}
+
+
+
+\subsection{Circumstance for certificate renewal}
+
+HellasGrid CA does not renew certificates. Subscribers must follow the re-key procedure as defined in section \ref{sec:CertificateRe-key}.
+
+
+\subsection{Who may request renewal}
+
+HellasGrid CA does not renew certificates. Subscribers must follow the re-key procedure as defined in section \ref{sec:CertificateRe-key}.
+
+
+\subsection{Processing certificate renewal requests}
+
+HellasGrid CA does not renew certificate. Subscribers must follow the re-key procedure as defined in section \ref{sec:CertificateRe-key}.
+
+\subsection{Notification of new certificate issuance to subscriber}
+
+HellasGrid CA does not renew certificate. Subscribers must follow the re-key procedure as defined in section \ref{sec:CertificateRe-key}.
+
+\subsection{Conduct constituting acceptance of a renewal certificate}
+
+HellasGrid CA does not renew certificate. Subscribers must follow the re-key procedure as defined in section \ref{sec:CertificateRe-key}.
+
+\subsection{Publication of the renewal certificate by the CA}
+
+HellasGrid CA does not renew certificate. Subscribers must follow the re-key procedure as defined in section \ref{sec:CertificateRe-key}.
+
+\subsection{Notification of certificate issuance by the CA to other entities}
+
+HellasGrid CA does not renew certificate. Subscribers must follow the re-key procedure as defined in section \ref{sec:CertificateRe-key}.
+
+\section{Certificate re-key}
+\label{sec:CertificateRe-key}
+
+\subsection{Circumstance for certificate re-key}
+\label{sub:CircumstanceForCertificateRe-key}
+
+Subscribers must regenerate a new key pair for each certificate they request to be signed by the HellasGrid CA.
+
+\subsection{Who may request certification of a new public key}
+
+Same as in subsection \ref{sub:WhoCanSubmitACertificateApplication}.
+
+\subsection{Processing certificate re-keying requests}
+
+Expiration warnings will be issued to subscribers when re-key time arrives. Re-key before expiration can be accomplished by logging to the HellasGrid CA web portal with their personal certificates and submitting a new certificate request or by sending a digitally signed e-mail to the RA serving their organization. Re-key after expiration follows the same authentication procedure as for a new certificate as described in section \ref{sub:PerfomingIdentificationAndAuthenticationFunctions} 
+
+In case the request for a new certificate is due to revocation or expiration of the existing certificate or compromise of the private key the subscriber must follow the same procedure as for a new one.
+
+\subsection{Notification of new certificate issuance to subscriber}
+
+Same as in subsection \ref{sub:NotificationToSubscriberByTheCAOfIssuanceOfCertificate}. 
+
+\subsection{Conduct constituting acceptance of a re-keyed certificate}
+
+Same as in subsection \ref{sub:ConductConstitutingCertificateAcceptance}. 
+
+\subsection{Publication of the re-keyed certificate by the CA}
+
+Same as in subsection \ref{sub:PublicationOfTheCertificateByTheCA}. 
+
+\subsection{Notification of certificate issuance by the CA to other entities}
+
+Same as in subsection \ref{sub:NotificationOfCertificateIssuanceByTheCAToOtherEntities}. 
+
+\section{Certificate modification}
+
+
+
+\subsection{Circumstance for certificate modification}
+\label{sub:CircumstanceForCertificateModification}
+
+HellasGrid CA does not modify certificates. In case a modification is required the revocation and re-key procedures should be followed. 
+
+\subsection{Who may request certificate modification}
+
+HellasGrid CA does not modify certificates. In case a modification is required the revocation and re-key procedures should be followed.
+ 
+\subsection{Processing certificate modification requests}
+
+HellasGrid CA does not modify certificates. In case a modification is required the revocation and re-key procedures should be followed. 
+
+\subsection{Notification of new certificate issuance to subscriber}
+
+HellasGrid CA does not modify certificates. In case a modification is required the revocation and re-key procedures should be followed. 
+
+\subsection{Conduct constituting acceptance of modified certificate}
+
+HellasGrid CA does not modify certificates. In case a modification is required the revocation and re-key procedures should be followed. 
+
+\subsection{Publication of the modified certificate by the CA}
+
+HellasGrid CA does not modify certificates. In case a modification is required the revocation and re-key procedures should be followed. 
+
+\subsection{Notification of certificate issuance by the CA to other entities}
+
+HellasGrid CA does not modify certificates. In case a modification is required the revocation and re-key procedures should be followed.
+
+\section{Certificate revocation and suspension}
+\subsection{Circumstances for revocation}
+
+A certificate will be revoked in the following circumstances:
+
+\begin{enumerate}
+\item{the entity to whom the certificate has been issued to has ceased being an eligible end entity for certification, as described in this policy;}
+\item{the subject does not require the certificate any more;}
+\item{the private key has been lost or compromised;}
+\item{the information in the certificate is wrong or inaccurate;}
+\item{the system or the robot to which the certificate has been issued has been retired;}
+\item{the subject has failed to comply with the rules of this policy.}
+\end{enumerate}
+
+An end entity (or in the case of host or service certificate, the person responsible for it ) must request revocation of its certificate as soon as possible but within one working day after detection of key compromise or of invalid data contained in the certificate. 
+
+\subsection{Who can request revocation}
+
+The revocation of the certificate can be requested by:
+
+\begin{enumerate}
+\item{the certificate owner;}
+%TODO: [Who can request revocation] The person who requests for a certificate revocation must also be authenticated. This must be decsribed in the relevant paragraph.
+\item{the corresponding RA;}
+\item{any other entity presenting proof of knowledge of the private key compromise or of the modification of the subscriber's data.}
+\end{enumerate}
+
+\subsection{Procedure for revocation request}
+
+%TODO: [Procedure for revocation request] This is not the procedure for authenticating the revocation requests
+The entity requesting the revocation of a certificate is authenticated by logging to the HellasGrid CA portal using a valid HellasGrid CA certificate or by verifying the digital signature in the e-mail request. Otherwise authentication will be performed with the same procedure as described in section \ref{sub:AuthenticationOfIndividualIdentity}. 
+
+
+\subsection{Revocation request grace period}
+
+There is no grace period for revocation requests.
+
+\subsection{Time within which CA must process the revocation request}
+
+HellasGrid CA processes all revocation requests within 1 working day.
+
+\subsection{Revocation checking requirement for relying parties}
+
+Relying parties are advised to download the CRL from the on-line repository [section \ref{sec:PublicationOfCertificationInformation}] at least once a day and implement its restrictions while validating certificates.
+
+\subsection{CRL issuance frequency}
+\label{sub:CRLIssuanceFrequency}
+
+\begin{enumerate}
+\item{CRLs will be published in the on-line repository as soon as issued and at least once every 23 days;}
+\item{The minimum CRL lifetime is 7 days;}
+\item{The maximum CRL lifetime is 30 days;}
+\item{CRLs are issued at least 7 days before expiration.}
+\end{enumerate}
+
+\subsection{Maximum latency for CRLs}
+
+See subsection \ref{sub:CRLIssuanceFrequency}.
+
+\subsection{On-line revocation/status checking availability}
+
+Currently there are no on-line revocation/status services offered by the HellasGrid CA.
+
+See also subsection \ref{sub:OperationalCharacteristics}.
+
+\subsection{On-line revocation checking requirements}
+
+Currently there are no on-line revocation/status services offered by the HellasGrid CA.
+
+\subsection{Other forms of revocation advertisements available}
+
+No stipulation.
+
+\subsection{Special requirements re-key compromise}
+
+No stipulation.
+
+\subsection{Circumstances for suspension}
+\label{sub:CircumstancesForSuspension}
+
+HellasGrid CA does not suspend certificates.
+
+\subsection{Who can request suspension}
+
+HellasGrid CA does not suspend certificates.
+
+\subsection{Procedure for suspension request}
+
+HellasGrid CA does not suspend certificates.
+
+\subsection{Limits on suspension period}
+
+HellasGrid CA does not suspend certificates.
+
+\section{Certificate status services}
+\subsection{Operational characteristics}
+\label{sub:OperationalCharacteristics}
+
+HellasGrid CA operates an on-line repository that contains all the CRLs that have been issued. Promptly following revocation, the CRL or certificate status database in the repository shall be updated.
+
+
+\subsection{Service availability}
+
+The HellasGrid CA on-line repository is maintained on best effort basis with intended availability of $24\times 7$.
+
+\subsection{Optional features}
+
+No stipulation. 
+
+\section{End of subscription}
+
+No stipulation.
+
+\section{Key escrow and recovery}
+
+
+\subsection{Key escrow and recovery policy and practices}
+
+No stipulation.
+
+\subsection{Session key encapsulation and recovery policy and practices}
+
+No stipulation.
+

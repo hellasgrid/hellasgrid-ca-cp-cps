@@ -1,0 +1,1321 @@
+\documentclass[11pt,a4paper,titlepage]{book}
+\usepackage{ulem}
+
+%%% Set border's layout
+\usepackage[inner=2.8cm,vmargin=4cm,hcentering,
+            bindingoffset=5mm]{geometry}
+
+%%% Set header and footer layout
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\thechapter.\ #1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\MakeUppercase{\thesection.\ #1}}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhf{}
+\fancyhead[LE,RO]{ \thepage}
+\fancyhead[LO]{ \rightmark}
+\fancyhead[RE]{ \leftmark}
+%\fancyfoot[C]{ \thepage}
+
+
+
+
+\renewcommand{\maketitle}{\begin{titlepage}%
+ \begin{flushright}
+   {\Large
+     HellasGrid Root\\
+     Certification Authority\\
+   }
+ \end{flushright}
+ \rule{\textwidth}{3pt}
+ \begin{flushright}
+   \textsf{\Huge Certificate Policy and\\ 
+            Certification Practices Statement\\}
+ \end{flushright}
+ \rule{\textwidth}{3pt}
+ \vspace{\fill}
+ \end{titlepage}
+}% maketitle
+
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\chapter{INTRODUCTION}
+\section{Overview}
+
+
+This document defines the Certification Policy and the Certification Practice Statement of the HellasGrid Root CA and specifies the minimum requirements and obligations for the signing and management of certificates.
+
+HellasGrid Root CA is managed and operated by the Grid \& HPC Operations Center at the Aristotle University of Thessaloniki in coordination with GRNET S.A., coordinator of the Greek National Grid Initiative.
+
+\section{Document name and identification}
+
+\begin{itemize}
+\item{Document title: HellasGrid Root CA Certification Policy and Certification Practice Statement}
+\item{Version: $1.2$}
+\item{Document Date: \date{20 Mar, 2010}}
+\item{O.I.D.: 1.3.6.1.4.1.23877.1.8.0.1.2}
+\end{itemize}
+
+\section{PKI participants}
+
+\subsection{Certification Authorities}
+
+HellasGrid Root CA only signs CA certificates for its subordinate Certification Authorities. 
+
+\subsection{Registration Authorities}
+
+HellasGrid Root CA performs the task of the RA.
+
+
+\subsection{Subscribers}
+
+Subscribers eligible for certification by the HellasGrid Root CA are only Certification Authorities serving the Greek Research and Educational community.
+
+\subsection{Relying parties}
+
+People and Organizations that are using the public keys, in certificates issued by the HellasGrid Root CA for signature verification will be considered as relying parties.
+
+
+\subsection{Other participants}
+
+No stipulation. 
+
+\section{Certificate Usage}
+
+No stipulation.
+
+\subsection{Appropriate certificate uses}
+
+Certificates issued by the HellasGrid Root CA are only valid in the context of research and educational activities.
+
+\subsection{Prohibited certificate uses}
+
+Any other kind of usage such as financial transactions is strictly forbidden.
+
+\section{Policy administration}
+\subsection{Organization administering the document}
+\label{sub:OrganizationAdministeringTheDocument}
+
+The HellasGrid CP/CPS was authored and is administered by the Grid \& HPC Operations Center, which operates in the context of the Network and Telecommunications Committee of the Aristotle University of Thessaloniki.
+
+The HellasGrid CA address for operational issues is :
+
+\begin{verbatim}
+HellasGrid Certification Authority
+Building 22b, Basement
+Aristotle University of Thessaloniki
+University Campus
+54124 Thessaloniki
+GREECE
+Phone: +302310998988
+Fax: +302310994309
+Email: hellasgrid-ca@grid.auth.gr
+\end{verbatim}
+
+\subsection{Contact Person}
+\label{sub:ContactPerson}
+
+The contact person for questions about this document or any other HellasGrid CA related issues is:
+
+\begin{verbatim}
+Kanellopoulos Christos
+Building 22b, Basement
+Aristotle University of Thessaloniki
+University Campus
+54124 Thessaloniki
+GREECE
+Phone: +302310998988
+Fax: +302310994309
+E-mail 1: c.kanellopoulos@grid.auth.gr
+E-mail 2: contact@grid.auth.gr
+\end{verbatim}
+
+\subsection{Person determining CPS suitability for the policy}
+
+The person who determines the CPS suitability for this policy is:
+
+\begin{verbatim}
+Kanellopoulos Christos
+Building 22b, Basement
+Aristotle University of Thessaloniki
+University Campus
+54124 Thessaloniki
+GREECE
+Phone: +302310998988
+Fax: +302310994309
+E-mail: c.kanellopoulos@grid.auth.gr
+\end{verbatim}
+
+\subsection{CPS approval procedures}
+
+No stipulation.
+
+\newpage
+
+\section{DEFINITIONS AND ACRONYMS}
+
+\begin{tabular}{|p{0.35\textwidth}|p{0.6\textwidth}|}
+	
+\hline
+Authentication & 
+The process of establishing that individuals or organizations are who they claim to be. This process corresponds to the second process involved in identification. \\
+%\hline
+%\end{tabular}
+%\begin{tabular}{|p{0.45\textwidth}|p{0.45\textwidth}|}
+%\hspace{-0.7cm} % Gia kapoio logo den ekane edw swsta align
+%\begin{tabular}{|p{0.35\textwidth}|p{0.6\textwidth}|}
+\hline
+Certificate Policy (CP) &
+A named set of rules that indicates the applicability of a certificate to a particular community and/or class of application with common security requirements. For example, a particular certificate policy might indicate applicability of a type of certificate to the authentication of electronic data interchange transactions. \\
+\hline
+Certificate Revocation List (CRL) &
+A time stamped list identifying revoked certificates which is signed by a CA and made freely available in a public repository. \\
+\hline
+Certification Authority (CA) &
+An authority trusted by one or more subscribers to create and assign public key certificates and to be responsible for them during their whole lifetime. \\
+\hline
+Certification Practices Statement (CPS) &
+A statement of the practices, which a certification authority employs in issuing certificates. \\
+\hline
+End Entity (EE) & 
+Subscribers (users, hosts and services) of the HellasGrid CA \\
+\hline
+GridAUTH & 
+The GridAUTH Operations Center, which operates in the context of the Network and Telecommunications Committee of the Aristotle University of Thessaloniki \\
+\hline
+Identification & 
+The process of establishing the identity of an individual or organization. It involves two subprocesses in the context of PKI. (1) Establishing that a given name corresponds to a real-world identity and (2) establishing an individual or organization under that name is in fact the named individual or organization. \\
+%\newpage
+\hline
+Registration Authority (RA) & 
+An individual or group of people appointed by an organization that is responsible for Identification and Authentication of certificate subscribers, but that does not sign or issue certificates (i.e., an RA is delegated certain tasks on behalf of a CA).\\
+\hline
+Relying Party (RP) & 
+A recipient of a certificate who acts in reliance on that certificate and/or digital signatures verified using that certificate. \\
+\hline
+Robots &
+Robots, also known as automated clients, are entities that perform automated tasks without human intervention. Production ICT environments typically support repetitive, ongoing processes - either internal system processes or processes relating to the applications being run (e.g. by a site or by a portal system). These procedures and repetitive processes are typically automated, and generally run using an identity with the necessary privileges to perform their tasks. \\
+\hline
+\end{tabular}
+
+\chapter{PUBLICATION AND REPOSITORY RESPONSIBILITIES}
+\section{Repositories}
+
+All the on-line and off-line repositories of the SEE-GRID CA are operated by the Grid \& HPC Operations Center, Aristotle University of Thessaloniki, which operates in the context of the Network and Telecommunications Committee of the Aristotle University of Thessaloniki.
+
+The HellasGrid Root CA contact details for issues regarding the repositories is :
+
+\begin{verbatim}
+HellasGrid Certification Authority
+Building 22b, Basement
+Aristotle University of Thessaloniki
+University Campus
+54124 Thessaloniki
+GREECE
+Phone: +302310998988
+Fax: +302310994309
+Email: hellasgrid-ca@grid.auth.gr
+\end{verbatim}
+
+\section{Publication of certification information}
+
+HellasGrid Root CA maintains a secure on-line repository that is available to all Relying Parties through a web site accessible at \href{http://www.grid.auth.gr/pki/hellasgrid-root-ca}{http://www.grid.auth.gr/pki/hellasgrid-root-ca} and which contains:
+
+\begin{enumerate}
+\item{the HellasGrid Root CA root certificate;}
+\item{valid issued certificates;}
+\item{the latest CRL;}
+\item{a copy of the current and all previous versions of this document which specifies the CP and CPS;}
+\item{other relevant information relating to certificates that refer to this policy.}
+\end{enumerate}
+
+
+\section{Time or frequency of publication}
+
+Information shall be published promptly to the repository after such information is available to the CA. Certificates issued by the HellasGrid Rot CA, will be published promptly after being issued. Information relating to the revocation of a certificate will be published as described in subsection \ref{sub:CRLIssuanceFrequency}.
+
+
+\section{Access control on repositories}
+
+HellasGrid Root CA does not impose any access control restrictions to the information available at its web site, which includes the CA certificate, latest CRL and a copy of this document containing the CP and CPS.
+
+HellasGrid Root CA may impose a more restricted access control policy to the repository at its discretion.
+
+The HellasGrid Root CA web site is maintained on a best effort basis. Excluding maintenance shutdowns and unforeseen failures the site should be available $24\times 7$.
+
+
+\chapter{IDENTIFICATION AND AUTHENTICATION}
+\section{Naming}
+\subsection{Types of names}
+\label{sub:TypesOfNames}
+
+The subject names for the certificate applicants shall follow the X.500 standard. 
+
+
+\subsection{Need for names to be meaningful}
+
+The subject names for the certificate applicants shall follow the X.500 standard. The CN field must describe the subordinate CA. 
+
+\subsection{Anonymity or pseudonimity of subscribers}
+
+HellasGrid CA will neither issue nor sign pseudonymous or anonymous certificates.
+
+\subsection{Rules for interpreting various name forms}
+
+Allowed characters are: \verb|a-z A-Z 0-9 . , ( ) = :| space
+
+Characters can be encoded in one of the following forms:
+
+\begin{verbatim}
+   PrintableString;
+   T61String;
+   IA5String
+\end{verbatim}
+
+See subsection \ref{sub:TypesOfNames}.
+
+\subsection{Uniqueness of names}
+
+Each Certification Authorities to which HellasGrid Root CA issues certificates, must use a unique name.
+
+\subsection{Recognition, authentication, and role of trademarks}
+
+No stipulation. 
+
+\section{Initial identity validation}
+
+
+\subsection{Method to prove possession of key}
+
+The HellasGrid Root CA proves possession of the private key, that is the companion to the HellasGrid Root CA root certificate, by issuing certificates and signing CRLs.
+
+The HellasGrid Root CA verifies the possession of the private key associated to a certificate request by asking for a cryptographic challenge-response exchange at any point in time either before or after certification of the subscriber.
+
+The HellasGrid Root CA will not generate the key pair for subscribers and will not accept or retain private keys generated by subscribers.
+
+\subsection{Authentication of organization identity}
+
+HellasGrid CA authenticates organization by:
+
+\begin{itemize}
+\item{checking that the organization is focused on education or research;}
+\item{contacting the person who represents the organization.}
+\end{itemize}
+
+\subsection{Authentication of individual identity}
+
+The manager of the requesting Certification Authority must contact in person the HellasGrid Root CA. The authentication of the manager's identity is performed through the presentation of a valid photo ID document.
+
+\subsection{Non-verified subscriber information}
+
+No stipulation.
+
+\subsection{Validation of Authority}
+
+No stipulation.
+
+\subsection{Criteria of interoperation}
+
+No stipulation. 
+
+\section{Identification and authentication for re-key requests}
+\subsection{Identification and authentication for routine re-key}
+
+No stipulation.
+
+\subsection{Identification and authentication for re-key after revocation}
+
+A revoked key will not be re-certified.
+
+\section{Identification and authentication for revocation request}
+
+No stipulation.
+
+\chapter{CERTIFICATE LIFE-CYCLE OPERATIONAL REQUIREMENTS}
+\section{Certificate application}
+\subsection{Who can submit a certificate application}
+
+Certification Authorities operating in the context of research or educational activities in Greece.
+
+\subsection{Enrollment process and responsibilities}
+
+The requesting Certification Authority shall present a CP/CPS describing its certificate policies and certification practices. The requesting Certification Authority must sign a clearly defined namespace that will not class with a namespace that is being used by another Certification Authority.
+
+\section{Certificate application processing}
+\subsection{Performing identification and authentication functions}
+
+HellasGrid Root CA does not issue end entity certificates.
+
+\subsection{Approval or rejection of certificate applications}
+
+HellasGrid Root CA does not issue end entity certificates.
+
+\subsection{Time to process certificate applications}
+
+HellasGrid Root CA does not issue end entity certificates.
+
+\section{Certificate issuance}
+\subsection{CA actions during certificate issuance}
+
+No stipulation.
+
+\subsection{Notification to subscriber by the CA of issuance of certificate}
+
+No stipulation.
+
+\section{Certificate acceptance}
+\subsection{Conduct constituting certificate acceptance}
+
+No stipulation.
+
+\subsection{Publication of the certificate by the CA}
+
+All the certificates issued by the HellasGrid Root CA will be published in the on-line repository operated by the HellasGrid Root CA.
+
+\subsection{Notification of certificate issuance by the CA to other entities}
+
+No stipulation.
+
+\section{Key pair and certificate usage}
+\subsection{Subscriber private key and certificate usage}
+
+The subscribers' private keys along with the certificates issued by the HellasGrid Root CA can be used for:
+
+\begin{enumerate}
+\item{CRL signature;}
+\item{Key Certificate signature}
+\end{enumerate}
+
+\subsection{Relying party public key and certificate usage}
+
+Relying parties can use the HellasGrid Root CA public key and certificate to verify and validate sub-ordinate certificates.
+
+
+\section{Certificate renewal}
+\subsection{Circumstance for certificate renewal}
+
+HellasGrid Root CA will not renew a subscriber’s certificate. Subscribers must follow the re-key procedure as defined in section \ref{sec:CertificateRe-key}.
+
+\subsection{Who may request renewal}
+
+
+HellasGrid Root CA will not renew a CA’s certificate. Subscribers must follow the re-key procedure as defined in section \ref{sec:CertificateRe-key}.
+
+\subsection{Processing certificate renewal requests}
+
+HellasGrid Root CA will not renew a CA’s certificate. Subscribers must follow the re-key procedure as defined in section \ref{sec:CertificateRe-key}.
+
+\subsection{Notification of new certificate issuance to subscriber}
+
+HellasGrid Root CA will not renew a CA certificate. Subscribers must follow the re-key procedure as defined in section \ref{sec:CertificateRe-key}.
+
+\subsection{Conduct constituting acceptance of a renewal certificate}
+
+HellasGrid CA will not renew a CA certificate. Subscribers must follow the re-key procedure as defined in section \ref{sec:CertificateRe-key}.
+
+
+\subsection{Publication of the renewal certificate by the CA}
+
+HellasGrid Root CA will not renew a CA certificate. Subscribers must follow the re-key procedure as defined in section \ref{sec:CertificateRe-key}.
+
+\subsection{Notification of certificate issuance by the CA to other entities}
+
+HellasGrid Root CA will not renew a CA certificate. Subscribers must follow the re-key procedure as defined in section \ref{sec:CertificateRe-key}.
+
+\section{Certificate re-key}
+\subsection{Circumstance for certificate re-key}
+
+A sub-ordinate CA can re-key in the following circumstances:
+
+\begin{enumerate}
+\item{expiration of their certificate signed by the HellasGrid Root CA;}
+\item{compromise of their private key;}
+\item{revocation of their certificate by the HellasGrid Root CA.}
+\end{enumerate}
+
+\subsection{Who may request certification of a new public key}
+
+Same as in section 4.1.1 under the circumstances given in 4.7.1.
+
+\subsection{Processing certificate re-keying requests}
+
+
+
+HellasGrid Root CA does not sign certificates for end entities.
+
+
+\subsection{Notification of new certificate issuance to subscriber}
+
+
+Same as in section 4.3.2
+
+\subsection{Conduct constituting acceptance of a re-keyed certificate}
+
+Same as in section 4.4.1
+
+\subsection{Publication of the re-keyed certificate by the CA}
+
+Same as in section 4.4.2
+
+\subsection{Notification of certificate issuance by the CA to other entities}
+
+Same as in section 4.4.3
+
+\section{Certificate modification}
+
+
+
+\subsection{Circumstance for certificate modification}
+
+No stipulation.
+
+\subsection{Who may request certificate modification}
+
+No stipulation.
+
+\subsection{Processing certificate modification requests}
+
+No stipulation.
+
+\subsection{Notification of new certificate issuance to subscriber}
+No stipulation.
+
+\subsection{Conduct constituting acceptance of modified certificate}
+No stipulation.
+
+\subsection{Publication of the modified certificate by the CA}
+No stipulation.
+
+\subsection{Notification of certificate issuance by the CA to other entities}
+No stipulation.
+
+\section{Certificate revocation and suspension}
+\subsection{Circumstances for revocation}
+
+A certificate will be revoked under the following circumstances:
+
+\begin{enumerate}
+\item{the private key has been lost or compromised;}
+\item{the information in the certificate is wrong or inaccurate;}
+\end{enumerate}
+
+\subsection{Who can request revocation}
+
+The revocation of the certificate can be requested by anyone presenting proof of knowledge of the private key compromise.
+
+
+\subsection{Procedure for revocation request}
+
+No stipulation.
+
+
+\subsection{Revocation request grace period}
+
+No stipulation.
+
+\subsection{Time within which CA must process the revocation request}
+
+HellasGrid Root CA will process all revocation requests within 1 working day.
+
+\subsection{Revocation checking requirement for relying parties}
+
+Relying parties must download the CRL from the on-line repository [section 2.2] at least once a day and implement its restrictions while validating certificates.
+
+\subsection{CRL issuance frequency}
+
+\begin{enumerate}
+\item{CRLs will be published in the on-line repository as soon as issued and at least once every 6 months;}
+\item{The minimum CRL lifetime is 7 days;}
+\item{CRLs are issued at least 7 days before expiration.}
+\end{enumerate}
+
+\subsection{Maximum latency for CRLs}
+
+See section 4.9.7.
+
+\subsection{On-line revocation/status checking availability}
+
+Currently there are no on-line revocation/status services offered by the HellasGrid Root CA.
+
+\subsection{On-line revocation checking requirements}
+
+Currently there are no on-line revocation/status services offered by the HellasGrid Root CA.
+
+\subsection{Other forms of revocation advertisements available}
+
+No stipulation.
+
+\subsection{Special requirements re key compromise}
+
+No stipulation.
+
+\subsection{Circumstances for suspension}
+
+HellasGrid Root CA does not suspend certificates.
+
+\subsection{Who can request suspension}
+
+HellasGrid Root CA does not suspend certificates
+
+\subsection{Procedure for suspension request}
+
+HellasGrid Root CA does not suspend certificates
+
+\subsection{Limits on suspension period}
+
+HellasGrid Root CA does not suspend certificates
+
+\section{Certificate status services}
+\subsection{Operational characteristics}
+
+HellasGrid Root CA operates an on-line repository that contains all the CRLs that have been issued. Promptly following revocation, the CRL or certificate status database in the repository, as applicable, shall be updated.
+
+\subsection{Service availability}
+
+The HellasGrid CA on-line repository is maintained on best effort basis with intended availability of $24\times 7$.
+
+\subsection{Optional features}
+
+No stipulation. 
+
+\section{End of subscription}
+
+No stipulation.
+
+\section{Key escrow and recovery}
+
+
+\subsection{Key escrow and recovery policy and practices}
+
+No stipulation.
+
+\subsection{Session key encapsulation and recovery policy and practices}
+
+No stipulation.
+
+\chapter{FACILITY, MANAGEMENT, AND OPERATIONAL CONTROLS}
+\section{Physical controls}
+\subsection{Site location and construction}
+
+HellasGrid CA is hosted at the Grid \& HPC Operations Center at the Aristotle University of Thessaloniki.
+
+
+\subsection{Physical access}
+
+Physical access to the HellasGrid Root CA is restricted to authorized personnel only.
+
+\subsection{Power and air conditioning}
+
+The HellasGrid Root CA signing machine and the CA web server are both protected by uninterruptable power supplies. Environment temperature in rooms containing CA related equipment is maintained at appropriate levels by air conditioning systems.
+
+
+\subsection{Water exposures}
+
+HellasGrid Root CA facilities adhere to the Greek law regarding flood prevention and protection in public buildings.
+
+\subsection{Fire prevention and protection}
+
+HellasGrid CA facilities adhere to the Greek law regarding fire prevention and protection in public buildings.
+
+
+\subsection{Media storage}
+
+\begin{enumerate}
+\item{The HellasGrid Root CA private key is kept in several removable storage media;}
+\item{Backup copies of CA related information are kept in magnetic tape cartridges, floppies and CD-ROM.}
+\end{enumerate}
+
+\subsection{Waste disposal}
+
+Waste carrying potential confidential information such as old floppy disks are physically destroyed before being trashed.
+
+\subsection{Off-site backup}
+
+No off-site backups are currently performed.
+
+\section{Procedural controls}
+\subsection{Trusted roles}
+
+All employees, contractors, and consultants of the HellasGrid Root CA (collectively “personnel”) that have access to or control over cryptographic operations that may materially affect the CA’s issuance, use, suspension, or revocation of certificates, including access to restricted operations of the CA’s repository, shall, for purposes of this Policy, be considered as serving in a trusted role. Such personnel include, but are not limited to, system administration personnel, operators, engineering personnel, and executives who are designated to oversee the CA’s operations.
+
+
+\subsection{Number of persons required per task}
+
+No stipulation.
+
+\subsection{Identification and authentication for each role}
+
+No stipulation.
+
+\subsection{Roles requiring separation of duties}
+
+No stipulation.
+
+\section{Personnel controls}
+\subsection{Qualifications, experience, and clearance requirements}
+
+HellasGrid Root CA personnel is selected by the HellasGrid Root CA operating organization.
+
+\subsection{Background check procedures}
+
+No stipulation.
+
+\subsection{Training requirements}
+
+Internal training is given to HellasGrid Root CA operators.
+
+\subsection{Retraining frequency and requirements}
+
+HellasGrid Root CA will perform operational audit of the CA staff at least once per year. If the results of the operational audit are not satisfactory, retraining will be considered.
+
+
+\subsection{Job rotation frequency and sequence}
+
+No stipulation.
+
+\subsection{Sanctions for unauthorized actions}
+
+No stipulation.
+
+\subsection{Independent contractor requirements}
+
+No stipulation.
+
+\subsection{Documentation supplied to personnel}
+
+Documentation regarding all the operational procedures of the CA is supplied to personnel during the initial training period.
+
+\section{Audit logging procedures}
+\subsection{Types of events recorded}
+
+\begin{itemize}
+\item{System boots and shutdowns}
+\item{Interactive system logins}
+\item{periodic message digests of all system files}
+\item{requests for certificates}
+\item{identity verification procedures}
+\item{certificate issuing}
+\item{requests for revocation}
+\item{CRL issuing}
+\end{itemize}
+
+\subsection{Frequency of processing log}
+
+Audit logs will be processed at least once per 6 months.
+
+
+\subsection{Retention period for audit log}
+
+Audit logs will be retained for a minimum of 3 years.
+
+\subsection{Protection of audit log}
+
+Only authorized CA personnel is allowed to view and process audit logs. Audit logs are copied to an off-line medium.
+
+
+\subsection{Audit log backup procedures}
+
+Audit logs are copied to an off line medium, which is stored in safe storage.
+
+\subsection{Audit collection system (internal vs. external)}
+
+The audit log accumulation system is internal to the HellasGrid Root CA.
+
+\subsection{Notification to event-causing subject}
+
+No stipulation.
+
+\subsection{Vulnerability assessments}
+
+No stipulation.
+
+\section{Records archival}
+\subsection{Types of records archived}
+
+The following data and files will be archived by the HellasGrid Root CA:
+
+\begin{enumerate}
+\item{all certificate application data, including certification and revocation;}
+\item{all certificates and all CRLs or certificate status records generated;}
+\item{the login/logout/reboot of the issuing machine.}
+\end{enumerate}
+
+\subsection{Retention period for archive}
+
+Logs will be kept for a minimum of three years.
+
+\subsection{Protection of archive}
+
+Audit logs are copied to an off-line medium, which is stored in safe storage. On-line logs are protected by ACLs in the file system used by operating system.
+
+\subsection{Archive backup procedures}
+
+Audit events are copied to an off-line medium.
+
+\subsection{Requirements for time-stamping of records}
+
+No stipulation. 
+
+\subsection{Archive collection system (internal or external)}
+
+Audit events are copied to an off-line medium.
+
+\subsection{Procedures to obtain and verify archive information}
+
+No stipulation.
+
+\section{Key changeover}
+
+The CA's private signing key is changed periodically; from that time on only the new key will be used for certificate signing purposes. The overlap of the old and new key must be sufficient to cover the validity period of all the certificates signed by the HellasGrid Root CA. During this overlapping period, the older but still valid certificate will be available to verify old signatures and the private key to sign CRLs.
+
+
+\section{Compromise and disaster recovery}
+\subsection{Incident and compromise handling procedures}
+
+If the CA private key is compromised or destroyed the CA will:
+
+\begin{enumerate}
+\item{Notify subscribers and subordinate CAs;}
+\item{Terminate the issuance and distribution of certificates and CRLs;}
+\item{Notify relevant security contacts.}
+\end{enumerate}
+
+\subsection{Computing resources, software, and/or data are corrupted}
+
+Both private and public CA data is backed up every time they are changed.
+
+\subsection{Entity private key compromise procedures}
+
+No stipulation.
+%The corresponding certificate is being revoked.
+
+\subsection{Business continuity capabilities after a disaster}
+
+No stipulation.
+
+\section{CA or RA termination}
+
+Upon termination the HellasGrid Root CA will:
+
+\begin{enumerate}
+\item{Notify sub-ordinate CAs;}
+\item{Terminate the issuance and distribution of certificates and CRLs;}
+\item{Notify relevant security contacts;}
+\item{Notify as widely as possible the end of the service.}
+\end{enumerate}
+
+
+\chapter{TECHNICAL SECURITY CONTROLS}
+\section{Key pair generation and installation}
+\subsection{Key pair generation}
+
+Key pairs for CAs must be generated in such a way that private key is not known by any other than the owner of the key pair.
+
+HellasGrid Root CA does not generate private keys on behalf of sub-ordinate CAs.
+
+
+
+\subsection{Private key delivery to subscriber}
+
+
+The HellasGrid Root CA does not generate private keys hence does not deliver private keys.
+
+
+\subsection{Public key delivery to certificate issuer}
+
+
+The subscriber's public key must be transferred to the HellasGrid Root CA in a way that ensures that it has not been altered.
+
+\subsection{CA public key delivery to relying parties}
+
+
+CA certificate can be downloaded from the HellasGrid Root CA web site.
+
+\subsection{Key sizes}
+
+\begin{enumerate}
+\item{The minimum key length for the private keys of subordinate CAs is 2048 bit.}
+\item{The minimum length for the HellasGrid Root CA private key is 2048 bits.}
+\end{enumerate}
+
+\subsection{Public key parameters generation and quality checking}
+
+No stipulation.
+
+\subsection{Key usage purposes (as per X.509 v3 key usage field)}
+
+\paragraph{CA Certificate:} The CA key can be used for CRL signing (cRLSing) and for certificate signing (keyCertSign)
+
+
+\section{Private Key Protection and Cryptographic Module Engineering Controls}
+\subsection{Cryptographic module standards and controls}
+
+No stipulation. 
+
+\subsection{Private key (n out of m) multi-person control}
+
+No stipulation. 
+
+\subsection{Private key escrow}
+
+No stipulation.
+
+\subsection{Private key backup}
+
+The HellasGrid Root CA private key is kept in encrypted form in media storage as described in section 5.1.6. All media is located in safe places where access is restricted to authorized personnel only.
+
+
+\subsection{Private key archival}
+
+HellasGrid Root CA does not archive private keys.
+
+\subsection{Private key transfer into or from a cryptographic module}
+
+No stipulation.
+
+\subsection{Private key storage on cryptographic module}
+
+No stipulation.
+
+\subsection{Method of activating private key}
+
+No stipulation.
+
+\subsection{Method of deactivating private key}
+
+No stipulation.
+
+\subsection{Method of destroying private key}
+
+No stipulation.
+
+\subsection{Cryptographic Module Rating}
+
+No stipulation.
+
+\section{Other aspects of key pair management}
+
+%No stipulation.
+
+\subsection{Public key archival}
+
+No stipulation.
+
+\subsection{Certificate operational periods and key pair usage periods}
+
+All certificates issued to sub-ordinate CAs by the HellasGrid Root CA must have a maximum lifetime of no more than 10 years.
+
+The lifetime of the HellasGrid Root CA root certificate must be no more than 20 years and no less than 10 years.
+
+\section{Activation data}
+\subsection{Activation data generation and installation}
+
+
+The pass phrase used to activate the HellasGrid Root CA private key is generated on the computer used for the Root CA signing operations and must be at least 15 characters long. Every 6 months the pass phrase is regenerated by one of the HellasGrid Root CA Operators.
+
+
+\subsection{Activation data protection}
+
+The HellasGrid Root CA uses a pass phrase to activate its private key, which is known only by the HellasGrid Root CA Manager and the HellasGrid Root CA Operators. A copy in written form of the pass phrase is sealed in an envelope and kept in a safe. Access to the safe is restricted only to the HellasGrid Root CA Manager and Operators. Old activation data are destroyed according to current best practices.
+
+\subsection{Other aspects of activation data}
+
+No stipulation.
+
+\section{Computer security controls}
+\subsection{Specific computer security technical requirements}
+
+\begin{enumerate}
+\item{The operating systems of CA computers are maintained at a high level of security by applying all the relevant patches;}
+\item{active monitoring is performed to detect unauthorized software changes;}
+\item{CA systems configuration is reduced to the bare minimum;}
+\item{the signing machine is kept powered off between uses.}
+\end{enumerate}
+
+\subsection{Computer security rating}
+
+No stipulation.
+
+\section{Life cycle technical controls}
+\subsection{System development controls}
+
+No stipulation.
+
+\subsection{Security management controls}
+
+No stipulation.
+
+\subsection{Life cycle security controls}
+
+No stipulation.
+
+\section{Network security controls}
+
+\begin{enumerate}
+\item{The Root CA signing machine is kept off-line;}
+\item{Root CA machines other than the signing machine are protected by a firewall;}
+\item{Passive monitoring is performed in order to detect malicious network activity.}
+\end{enumerate}
+
+\section{Time-stamping}
+
+No stipulation.
+
+\chapter{CERTIFICATE, CRL, AND OCSP PROFILES}
+\section{Certificate profile}
+\subsection{Version number(s)}
+
+All certificates that reference this Policy will be issued in the X.509 version 3 format and will include a reference to the O.I.D. of this Policy within the appropriate field.
+
+\subsection{Certificate extensions}
+
+CA certificate:
+\begin{enumerate}
+\item{Basic constraints (Critical): CA.}
+\item{Key usage (Critical): CRL signature, key certificate signature.}
+\item{Subject key identifier}
+\item{Authority key identifier}
+\item{Subject alternative name}
+\item{Issuer alternative name}
+\item{CRL distribution points}
+\item{Certificate policies}
+\item{Netscape cert type}
+\end{enumerate}
+
+
+
+\subsection{Algorithm object identifiers}
+
+No stipulation.
+
+\subsection{Name forms}
+
+Issuer:
+
+\begin{verbatim}
+C=GR,
+O=HellasGrid,
+OU=Certification Authorities,
+CN=HellasGrid Root CA 2006
+\end{verbatim}
+
+Subject:
+
+\begin{verbatim}
+C=GR
+O=HellasGrid,
+OU=Certification Authorities,
+CN=SUBJECT NAME
+\end{verbatim}
+
+\subsection{Name constraints}
+
+Subject attribute constraints:
+
+countryName:
+Must be “GR”.
+
+OrganizationName:
+Must be “HellasGrid”.
+
+organizationalUnitName:
+Must be “Certification Authorities”
+
+commonName:
+Must describe the subject
+
+
+\subsection{Certificate policy object identifier}
+
+HellasGrid Root CA identifies this policy with the object identifier (O.I.D.) specified in section 1.2.
+
+\subsection{Usage of Policy Constraints extension}
+
+No stipulation.
+
+\subsection{Policy qualifiers syntax and semantics}
+
+No stipulation.
+
+\subsection{Processing semantics for the critical Certificate Policies extension}
+
+No stipulation.
+
+\section{CRL profile}
+\subsection{Version number(s)}
+
+All CRLs will be issued in X.509 version 2 format.
+
+
+\subsection{CRL and CRL entry extensions}
+
+CRLs have only the Authority key identifier extension.
+
+\section{OCSP profile}
+
+%No stipulation.
+
+\subsection{Version number(s)}
+
+Currently there is no production level OCSP service in HellasGrid Root CA.
+
+\subsection{OCSP extensions}
+
+Currently there is no production level OCSP service in HellasGrid Root CA.
+
+
+\chapter{COMPLIANCE AUDIT AND OTHER ASSESSMENTS}
+\section{Frequency or circumstances of assessment}
+
+The HellasGrid Root CA may be audited by other trusted CAs to verify its compliance with the rules and procedures specified in this document. Any costs associated with such an audit must be covered by the requesting party.
+
+\section{Identity/qualifications of assessor}
+
+No stipulation.
+
+\section{Assessor's relationship to assessed entity}
+
+No stipulation.
+
+\section{Topics covered by assessment}
+
+No stipulation.
+
+\section{Actions taken as a result of deficiency}
+
+No stipulation.
+
+\section{Communication of results}
+
+No stipulation.
+
+
+
+\chapter{OTHER BUSINESS AND LEGAL MATTERS}
+
+\section{Fees}
+\subsection{Certificate issuance or renewal fees}
+
+No fees shall be charged.
+
+\subsection{Certificate access fees}
+
+No fees shall be charged.
+
+\subsection{Revocation or status information access fees}
+
+No fees shall be charged.
+
+\subsection{Fees for other services}
+
+No fees shall be charged.
+
+\subsection{Refund policy}
+
+No fees shall be charged so there is no refund policy.
+
+\section{Financial responsibility}
+
+
+
+
+\subsection{Insurance coverage}
+
+HellasGrid Root CA denies any financial responsibilities for damages or impairments resulting from its operation.
+
+\subsection{Other assets}
+
+HellasGrid Root CA denies any financial responsibilities for damages or impairments resulting from its operation.
+
+
+\subsection{Insurance or warranty coverage for end-entities}
+
+No stipulation.
+
+
+\section{Confidentiality of business information}
+
+
+
+\subsection{Scope of confidential information}
+
+No stipulation.
+
+\subsection{Information not within the scope of confidential information}
+
+No stipulation.
+
+\subsection{Responsibility to protect confidential information}
+
+No stipulation.
+
+\section{Privacy of personal information}
+
+
+\subsection{Privacy plan}
+
+HellasGrid Root CA does not collect any confidential or private information.
+
+\subsection{Information treated as private}
+
+HellasGrid Root CA does not collect any confidential or private information.
+
+\subsection{Information not deemed private}
+
+HellasGrid Root CA does not collect any confidential or private information.
+
+
+
+\subsection{Responsibility to protect private information}
+
+HellasGrid Root CA has not responsibility to protect private information as all the information it collects is public.
+
+\subsection{Notice and consent to use private information}
+
+HellasGrid Root CA does not collect any confidential or private information.
+
+\subsection{Disclosure pursuant to judicial or administrative process}
+
+HellasGrid Root CA does not collect any confidential or private information.
+
+\subsection{Other information disclosure circumstances}
+
+HellasGrid Root CA does not collect any confidential or private information.
+
+\section{Intellectual property rights}
+
+\begin{verbatim}
+RFC 3647;
+HellasGrid CA Certificate Policy v1.4;
+SEE-GRID CA Certificate Policy;
+UK e-Science CA CP/CPS.
+\end{verbatim}
+
+\section{Representations and warranties}
+\subsection{CA representations and warranties}
+
+No stipulation.
+
+\subsection{RA representations and warranties}
+
+No stipulation.
+
+\subsection{Subscriber representations and warranties}
+
+No stipulation.
+
+\subsection{Relying party representations and warranties}
+
+No stipulation.
+
+\subsection{Representations and warranties of other participants}
+
+No stipulation.
+
+\section{Disclaimers of warranties}
+
+No stipulation.
+
+\section{Limitations of liability}
+
+\begin{enumerate}
+\item{HellasGrid Root CA guarantees to control the identity of the certification requests according to the procedures described in this document;}
+\item{HellasGrid Root CA guarantees to control the identity of the revocation requests according to the procedures described in this document;}
+\item{HellasGrid Root CA is run on a best effort basis and does not give any guarantees about the service security or suitability;}
+\item{HellasGrid Root CA shall not be held liable for any problems arising from its operation or improper use of the issued certificates;}
+\item{HellasGrid Root CA denies any kind of responsibilities for damages or impairments resulting from its operation.}
+\end{enumerate}
+
+\section{Indemnities}
+
+No stipulation. 
+
+\section{Term and termination}
+\subsection{Term}
+
+No stipulation.
+
+\subsection{Termination}
+
+No stipulation.
+
+
+\subsection{Effect of termination and survival}
+
+No stipulation.
+
+\section{Individual notices and communications with participants}
+
+No stipulation.
+
+\section{Amendments}
+
+%No stipulation.
+
+\subsection{Procedure for amendment}
+
+No stipulation.
+
+\subsection{Notification mechanism and period}
+
+No stipulation.
+
+\subsection{Circumstances under which OID must be changed}
+
+No stipulation.
+
+\section{Dispute resolution provisions}
+
+Legal disputes arising from the operation of the HellasGrid Root CA will be resolved according to the Greek Law.
+
+\section{Governing law}
+
+The enforceability, construction, interpretation, and validity of this policy shall be governed by the Laws of Greece.
+
+
+\section{Compliance with applicable law}
+
+No stipulation.
+
+\section{Miscellaneous provisions}
+
+No stipulation.
+
+\subsection{Entire agreement}
+
+No stipulation.
+
+\subsection{Assignment}
+
+No stipulation.
+
+\subsection{Severability}
+
+No stipulation.
+
+
+\subsection{Enforcement (attorneys' fees and waiver of rights)}
+
+No stipulation.
+
+\subsection{Force Majeure}
+
+No stipulation.
+
+\section{Other provisions}
+
+No stipulation.
+
+
+
+
+
+
+
+
+\end{document}
