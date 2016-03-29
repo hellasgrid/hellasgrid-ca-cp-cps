@@ -21,7 +21,7 @@ The HellasGrid CA certificate can be downloaded from the \href{http://www.grid.a
 %TODO: [Key sizes] look: 1. http://technet.microsoft.com/en-ca/library/cc751157.aspx 2. https://wiki.mozilla.org/CA:MD5and1024 3. http://www.cabforum.org/documents.html In general after 31-12-2010 all EE certificates must be at least 2048 bits long
 \begin{enumerate}
 \item{The minimum key length for an End Entity certificate is 1024 bit. HellasGrid CA recommends the use of 2048 bits long private keys.}
-\item{The minimum length for the HellasGrid CA private key is 2048 bits.}
+\item{The minimum length for the HellasGrid CA private key is 4096 bits.}
 \end{enumerate}
 
 \subsection{Public key parameters generation and quality checking}
@@ -98,7 +98,7 @@ No stipulation.
 
 All End Entity certificates signed by the HellasGrid CA have a maximum lifetime of 1 year.
 
-The lifetime of the HellasGrid CA root certificate must be no more than 20 years and no less than 5 years.
+The lifetime of the HellasGrid CA certificate must be no more than 20 years and no less than 5 years.
 
 \section{Activation data}
 \subsection{Activation data generation and installation}

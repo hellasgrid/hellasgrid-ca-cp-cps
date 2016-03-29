@@ -5,8 +5,8 @@ ascii_files= $(pre).tex \
 #
 pdf: $(pre).pdf
 $(pre).pdf: $(ascii_files)
-	pdflatex $(pre).tex
-	pdflatex $(pre).tex
+	pdftex $(pre).tex
+	pdftex $(pre).tex
 #
 clean:
 	rm -f $(pre).pdf \
